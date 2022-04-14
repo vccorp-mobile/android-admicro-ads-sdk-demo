@@ -10,6 +10,25 @@
         <entry key="..\:/Android/AdsSdkDemo/app/src/main/res/layout/fragment_detail_ads_popup.xml" value="0.3546875" />
         <entry key="..\:/Android/AdsSdkDemo/app/src/main/res/layout/fragment_detail_ads_true_view.xml" value="0.3546875" />
         <entry key="..\:/Android/AdsSdkDemo/app/src/main/res/layout/item_ads.xml" value="0.3546875" />
+        <entry key="..\:/Work/android-admicro-ads-sdk-demo/app/src/main/res/drawable/background_ads.xml" value="0.152" />
+        <entry key="..\:/Work/android-admicro-ads-sdk-demo/app/src/main/res/drawable/background_ripple.xml" value="0.152" />
+        <entry key="..\:/Work/android-admicro-ads-sdk-demo/app/src/main/res/drawable/background_round_dark.xml" value="0.152" />
+        <entry key="..\:/Work/android-admicro-ads-sdk-demo/app/src/main/res/drawable/ic_cancel.xml" value="0.152" />
+        <entry key="..\:/Work/android-admicro-ads-sdk-demo/app/src/main/res/drawable/ic_launcher_background.xml" value="0.152" />
+        <entry key="..\:/Work/android-admicro-ads-sdk-demo/app/src/main/res/drawable/ic_more.xml" value="0.152" />
+        <entry key="..\:/Work/android-admicro-ads-sdk-demo/app/src/main/res/layout/activity_detail.xml" value="0.358695652173913" />
+        <entry key="..\:/Work/android-admicro-ads-sdk-demo/app/src/main/res/layout/activity_main.xml" value="0.17831813576494426" />
+        <entry key="..\:/Work/android-admicro-ads-sdk-demo/app/src/main/res/layout/fragment_demo.xml" value="0.358695652173913" />
+        <entry key="..\:/Work/android-admicro-ads-sdk-demo/app/src/main/res/layout/fragment_demo_header.xml" value="0.358695652173913" />
+        <entry key="..\:/Work/android-admicro-ads-sdk-demo/app/src/main/res/layout/fragment_demo_item.xml" value="0.358695652173913" />
+        <entry key="..\:/Work/android-admicro-ads-sdk-demo/app/src/main/res/layout/fragment_detail_ads_true_view.xml" value="0.358695652173913" />
+        <entry key="..\:/Work/android-admicro-ads-sdk-demo/app/src/main/res/layout/fragment_request.xml" value="0.358695652173913" />
+        <entry key="..\:/Work/android-admicro-ads-sdk-demo/app/src/main/res/layout/fragment_request_info.xml" value="0.18802083333333333" />
+        <entry key="..\:/Work/android-admicro-ads-sdk-demo/app/src/main/res/layout/fragment_request_log.xml" value="0.358695652173913" />
+        <entry key="..\:/Work/android-admicro-ads-sdk-demo/app/src/main/res/layout/fragment_request_result.xml" value="0.17831813576494426" />
+        <entry key="..\:/Work/android-admicro-ads-sdk-demo/app/src/main/res/layout/item_ads.xml" value="0.25" />
+        <entry key="..\:/Work/android-admicro-ads-sdk-demo/app/src/main/res/layout/item_tag.xml" value="0.358695652173913" />
+        <entry key="..\:/Work/android-admicro-ads-sdk-demo/app/src/main/res/menu/main_menu.xml" value="0.18802083333333333" />
       </map>
     </option>
   </component>

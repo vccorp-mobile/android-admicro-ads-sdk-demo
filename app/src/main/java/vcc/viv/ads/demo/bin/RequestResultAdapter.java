@@ -1,4 +1,4 @@
-package vcc.viv.ads.demo.bin.main.request.detail;
+package vcc.viv.ads.demo.bin;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -40,6 +40,7 @@ public class RequestResultAdapter extends RecyclerView.Adapter<RequestResultAdap
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.binding.zoneIdText.setText(adsInfo.get(position).zoneId);
         if (adsInfo.get(position).view.getParent() == null) {
+            holder.binding.root.removeAllViews();
             holder.binding.root.addView(adsInfo.get(position).view);
         }
     }
@@ -61,6 +62,7 @@ public class RequestResultAdapter extends RecyclerView.Adapter<RequestResultAdap
         if (adsInfoList != null) {
             this.adsInfo.clear();
             this.adsInfo.addAll(adsInfoList);
+            notifyDataSetChanged();
         }
     }
 

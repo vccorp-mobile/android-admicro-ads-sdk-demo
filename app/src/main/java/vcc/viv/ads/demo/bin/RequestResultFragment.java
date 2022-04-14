@@ -1,9 +1,8 @@
-package vcc.viv.ads.demo.bin.main.request.detail;
+package vcc.viv.ads.demo.bin;
 
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,7 +28,6 @@ import vcc.viv.ads.bin.AdsManagerCallback;
 import vcc.viv.ads.bin.AdsRequest;
 import vcc.viv.ads.demo.R;
 import vcc.viv.ads.demo.base.BaseFragment;
-import vcc.viv.ads.demo.bin.common.TagAdapter;
 import vcc.viv.ads.demo.databinding.FragmentRequestResultBinding;
 import vcc.viv.ads.demo.util.Const;
 import vcc.viv.ads.demo.util.Event;
@@ -66,6 +64,9 @@ public class RequestResultFragment extends BaseFragment implements Event {
         initView();
         initSetting();
         initRequestConfigure();
+
+        bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+        binding.middleLayout.setVisibility(View.VISIBLE);
     }
 
     @Override
@@ -132,7 +133,6 @@ public class RequestResultFragment extends BaseFragment implements Event {
                 toolkit.logger.warning(String.format(Const.Error.empty, "data in adapter"));
             } else {
                 adapter.setData(data);
-                adapter.notifyDataSetChanged();
                 binding.refresh.setRefreshing(false);
             }
         });
@@ -143,14 +143,17 @@ public class RequestResultFragment extends BaseFragment implements Event {
             public void requestAdsSuccess(String id, String requestId, List<AdsManager.AdsInfo> data) {
                 super.requestAdsSuccess(id, requestId, data);
                 if (!tag.equals(id)) return;
-                List<RequestResultAdapter.AdsInfo> adsInfo = new ArrayList<>();
-                for (AdsManager.AdsInfo dataItem : data) {
-                    RequestResultAdapter.AdsInfo item = new RequestResultAdapter.AdsInfo(new ConstraintLayout(getContext()), dataItem.zoneId);
-                    AdsData info = toolkit.adsManager.addAds(item.view, tag, requestId, dataItem.zoneId);
-                    adsInfo.add(item);
-                    toolkit.logger.debug(toolkit.gson.toJson(info));
-                }
-                getActivity().runOnUiThread(() -> viewModel.setViewList(adsInfo));
+
+                getActivity().runOnUiThread(() -> {
+                    List<RequestResultAdapter.AdsInfo> adsInfo = new ArrayList<>();
+                    for (AdsManager.AdsInfo dataItem : data) {
+                        RequestResultAdapter.AdsInfo item = new RequestResultAdapter.AdsInfo(new ConstraintLayout(getContext()), dataItem.zoneId);
+                        AdsData info = toolkit.adsManager.addAds(item.view, tag, requestId, dataItem.zoneId);
+                        adsInfo.add(item);
+                        toolkit.logger.debug(toolkit.gson.toJson(info));
+                    }
+                    viewModel.setViewList(adsInfo);
+                });
             }
 
             @Override
