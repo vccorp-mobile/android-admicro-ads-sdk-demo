@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Android/AdsSdkDemo/app/src/main/res/layout/fragment_demo_header.xml" value="0.3546875" />
+        <entry key="..\:/Android/AdsSdkDemo/app/src/main/res/layout/fragment_demo_item.xml" value="0.31068840579710144" />
+        <entry key="..\:/Android/AdsSdkDemo/app/src/main/res/layout/fragment_detail_ads_inpage.xml" value="0.19067028985507245" />
+        <entry key="..\:/Android/AdsSdkDemo/app/src/main/res/layout/fragment_detail_ads_item.xml" value="0.3546875" />
+        <entry key="..\:/Android/AdsSdkDemo/app/src/main/res/layout/fragment_detail_ads_popup.xml" value="0.3546875" />
+        <entry key="..\:/Android/AdsSdkDemo/app/src/main/res/layout/fragment_detail_ads_true_view.xml" value="0.3546875" />
+        <entry key="..\:/Android/AdsSdkDemo/app/src/main/res/layout/item_ads.xml" value="0.3546875" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
