@@ -5,7 +5,7 @@
 ## Giới thiệu
 
 - Demo sử dụng thư viên quảng cáo của vcc dành cho android
-- Version thư viện quảng cáo đang sử dụng : ***1.0.12-dev***
+- Version thư viện quảng cáo đang sử dụng : ***1.0.14***
 
 ## Thay đổi qua các phiên bản
 - Các thay đổi trong phiên bản 1.0.10
@@ -37,13 +37,14 @@
       }
       ```
     - Thêm demo phần true view
+
+- Các thay đổi trong phiên bản 1.0.14:
+    - Bỏ hàm request() cho việc test
     
 ## Dependency
 
 - *gson* : [github](https://github.com/google/gson)
-- *glide* : [github](https://github.com/bumptech/glide)
 - *dataBinding*: [google](https://developer.android.com/topic/libraries/data-binding)
-- *android-gif-drawable*: [github](https://github.com/koral--/android-gif-drawable)
 - *android* :
     - *appcompat*
     - *material*
@@ -73,30 +74,6 @@
 - **Test Request** : Nhập thông tin zoneIds để request xem quảng cáo
     - Input ( zoneIds - được cũng cấp bởi admicro )
     - Response Ads View
-    - Log
-- **Demo View** :
-    - Tổng hợp :
-        - *All in one* : Example tổng hợp các tính năng trong 1 màn hình ( pending )
-        - *True view* : Test trueview cho phần ads web ( pending )
-    - Quảng cáo đơn - Format :
-        - *Popup* ( processing )
-        - *In page* ( processing )
-        - *Cat fish* ( pending )
-    - Quảng cáo Native
-        - *Home*
-        - *Detail* ( processing )
-    - Quảng cáo Web
-        - *Top*
-        - *BillBoard*
-        - *Medium*
-        - *Adx Native*
-        - *Adx Sponsor* : 180x200 & 300x250
-        - *Lotus Shop Chat*
-        - *Poster*
-        - *Inpage*
-        - *Native* : normal, vieo, livestream
-        - *Deep Link*
-        - *No Deep Link*
 
 <!-- **************************************************
 ********** Area : Requirement *************************
