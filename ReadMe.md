@@ -116,15 +116,6 @@
 ************************************************** -->
 
 ## Hướng dẫn sử dụng sdk
-0. **Note**
-    - Gọi khi lần đầu cài app ( **bắt buộc** , dùng cho việc click vào quảng cáo bay sang app nhưng app chưa cài )
-    ```
-    https://ul.admicro.vn/dynamic-link/get?device_id=[deviceid]&ifa=[ifa]&app_id=[app_store_id]
-    ```
-    - Những hàm trả về **id** như *request*, do trả về ở các nơi đăng ký thông qua  AdsManagerCallback. Để tránh phải xử lý nhiều thì nên **check tag và requestId** trước khi xử lý công việc tiếp theo
-    - Các thành phần lưu ý trong **ext**:
-        - *non_inpage* ( "0" : Ads cần vẽ dưới dạng inpage, "1" : Ads cần vẽ không ẩn dưới bài viết )
-    
 1. **Gradle:**
     - Thêm maven từ sohames
     ```
@@ -141,7 +132,7 @@
     - Thêm gradle dependency của vccorp ads sdk
     ```
     dependencies {
-        implementation 'vcc.viv.ads:vcc-sdk-ads:1.0.10'
+        implementation 'vcc.viv.ads:vcc-sdk-ads:1.0.14'
     }
     ```
 2. **Khởi tạo manager:**
