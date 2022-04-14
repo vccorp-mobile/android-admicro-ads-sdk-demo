@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CustomCardView" parent="@style/Widget.MaterialComponents.CardView">
+        <item name="shapeAppearanceOverlay">@style/RoundConnerCardView</item>
+    </style>
+
+    <style name="TextDefault" parent="@style/Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:textSize">@dimen/text_default</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="RoundConnerCardView" parent="@style/Theme.AppCompat.DayNight.NoActionBar">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">0dp</item>
+        <item name="cornerSizeTopLeft">10dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+    </style>
+
+    <style name="interact_text">
+        <item name="android:textColor">@color/interact</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="title_and_content_text">
+        <item name="android:textColor">@color/title</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="TextHeader" parent="@style/Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:textSize">@dimen/text_header</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+</resources>
