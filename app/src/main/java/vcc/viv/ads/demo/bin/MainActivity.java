@@ -8,10 +8,13 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import com.google.android.material.tabs.TabLayoutMediator;
+
 import java.util.List;
 
 import vcc.viv.ads.demo.R;
 import vcc.viv.ads.demo.base.BaseActivity;
+import vcc.viv.ads.demo.bin.request.RequestResultFragment;
 import vcc.viv.ads.demo.databinding.ActivityMainBinding;
 import vcc.viv.ads.demo.util.Event;
 
@@ -22,6 +25,7 @@ public class MainActivity extends BaseActivity {
     private final String tag = MainActivity.class.getSimpleName();
 
     private ActivityMainBinding binding;
+    private MainAdapter pagerAdapter;
 
     private boolean doubleBack = false;
 
@@ -76,7 +80,20 @@ public class MainActivity extends BaseActivity {
      * Area : Function
      */
     private void initView() {
-        getSupportFragmentManager().beginTransaction().add(binding.container.getId(),new RequestResultFragment()).commit();
+        toolkit.logger.info("adapter");
+        pagerAdapter = new MainAdapter(this);
+        binding.viewpager.setAdapter(pagerAdapter);
+
+        toolkit.logger.info("init title page");
+        new TabLayoutMediator(binding.tab, binding.viewpager, (tab, position) -> {
+            MainAdapter.Type[] values = MainAdapter.Type.values();
+            MainAdapter.Type type = values[position % values.length];
+            if (type == MainAdapter.Type.Request) {
+                tab.setText("Request");
+            } else {
+                tab.setText("Demo");
+            }
+        }).attach();
     }
 
     /*

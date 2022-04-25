@@ -1,4 +1,4 @@
-package vcc.viv.ads.demo.bin;
+package vcc.viv.ads.demo.bin.request;
 
 import android.view.LayoutInflater;
 import android.view.View;

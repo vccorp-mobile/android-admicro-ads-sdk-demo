@@ -7,6 +7,7 @@ import com.google.gson.Gson;
 import vcc.viv.ads.bin.AdsLogger;
 import vcc.viv.ads.bin.AdsManager;
 import vcc.viv.ads.bin.InitializeParameter;
+import vcc.viv.ads.bin.adsenum.AdsBrowser;
 import vcc.viv.ads.demo.BuildConfig;
 import vcc.viv.ads.demo.util.Const;
 import vcc.viv.ads.demo.util.Logger;
@@ -35,7 +36,8 @@ public class Toolkit {
         logger.info("create parameter");
         InitializeParameter parameter = new InitializeParameter()
                 .setCore(activity, Const.appId, BuildConfig.VERSION_CODE + "")                    // required
-                .setLogger(true, AdsLogger.Level.info, "AdsSDK");                // optional
+                .setLogger(true, AdsLogger.Level.info, "AdsSDK")   // optional
+                .setWebBrowser(AdsBrowser.inapp, AdsBrowser.AdsInAppBrowser.startweb);// optional
         adsManager = AdsManager.getInstance();
         adsManager.initialize(parameter);
     }

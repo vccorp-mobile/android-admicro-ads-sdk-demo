@@ -6,14 +6,13 @@
     <string name="no">Không</string>
 
     <!-- Request Fragment -->
-    <string name="bottom_sheet_zone_input">sspId, sspId,...</string>
+    <string name="bottom_sheet_zone_input">Nhập id zone quảng cáo</string>
     <string name="bottom_sheet_request">Tạo quảng cáo</string>
 
     <!-- Demo Fragment -->
     <string name="demo_header_synthetic">Tổng hợp</string>
     <string name="demo_header_form">Các dạng form quảng cáo</string>
     <string name="demo_header_native">Các dạng quảng cáo native</string>
-    <string name="demo_header_web">Các dạng quảng cáo web</string>
 
     <string name="synthetic_all_in_one">All in One</string>
     <string name="synthetic_true_view">True view</string>
@@ -24,22 +23,6 @@
 
     <string name="native_home">Home</string>
     <string name="native_detail">Detail</string>
-
-    <string name="web_top">Top - 640x320</string>
-    <string name="web_billboard">Bill Board - 640x640</string>
-    <string name="web_medium">Medium - 300x250</string>
-    <string name="web_adx_native">Adx Native - 300x250</string>
-    <string name="web_adx_sponsor_180_200">Adx Sponsor - 180x200</string>
-    <string name="web_adx_sponsor_300_250">Adx Sponsor - 300x250</string>
-    <string name="web_poster">Poster - 640x1000</string>
-    <string name="web_in_page">InPage - 640x1280 ( fullscreen )</string>
-    <string name="web_lotus_shop_chat">Lotus Shop Chat</string>
-    <string name="web_native">Native</string>
-    <string name="web_native_video">Native video</string>
-    <string name="web_native_live">Native Livestream Banner</string>
-    <string name="web_deeplink">Deeplink</string>
-    <string name="web_no_deeplink">No Deeplink</string>
-    <string name="true_view">True view</string>
 
     <!--Notice-->
     <string name="notice_zone_empty">Bạn chưa điền zone id</string>

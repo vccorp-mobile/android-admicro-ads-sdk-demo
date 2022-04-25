@@ -1,12 +1,10 @@
-package vcc.viv.ads.demo.bin;
+package vcc.viv.ads.demo.bin.request;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import java.util.List;
-
-import vcc.viv.ads.demo.bin.RequestResultAdapter;
 
 public class RequestResultViewModel extends ViewModel {
     /*

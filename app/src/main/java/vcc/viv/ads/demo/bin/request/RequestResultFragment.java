@@ -1,4 +1,4 @@
-package vcc.viv.ads.demo.bin;
+package vcc.viv.ads.demo.bin.request;
 
 import android.os.Bundle;
 import android.text.Editable;
@@ -26,6 +26,7 @@ import vcc.viv.ads.bin.AdsData;
 import vcc.viv.ads.bin.AdsManager;
 import vcc.viv.ads.bin.AdsManagerCallback;
 import vcc.viv.ads.bin.AdsRequest;
+import vcc.viv.ads.bin.Zone;
 import vcc.viv.ads.demo.R;
 import vcc.viv.ads.demo.base.BaseFragment;
 import vcc.viv.ads.demo.databinding.FragmentRequestResultBinding;
@@ -262,9 +263,13 @@ public class RequestResultFragment extends BaseFragment implements Event {
             binding.refresh.setRefreshing(false);
             Snackbar.make(binding.mainContent, getResources().getString(R.string.notice_zone_empty), BaseTransientBottomBar.LENGTH_SHORT).show();
         } else {
+            List<Zone> zones = new ArrayList<>();
+            for (int i = 0; i < zonesAdapter.getData().size(); i++) {
+                zones.add(new Zone(zonesAdapter.getData().get(i), null));
+            }
             toolkit.adsManager.request(tag, requestId, new AdsRequest.ReaderParameter(
                     Const.Ads.Test.userId,
-                    zonesAdapter.getData(),
+                    zones,
                     Const.Ads.Test.positions, Const.Ads.Test.url, Const.Ads.Test.channel
             ));
         }
