@@ -1,4 +1,4 @@
-package vcc.viv.ads.demo.bin.request;
+package vcc.viv.ads.demo.bin.main.request;
 
 import android.os.Bundle;
 import android.text.Editable;
@@ -29,6 +29,7 @@ import vcc.viv.ads.bin.AdsRequest;
 import vcc.viv.ads.bin.Zone;
 import vcc.viv.ads.demo.R;
 import vcc.viv.ads.demo.base.BaseFragment;
+import vcc.viv.ads.demo.bin.common.TagAdapter;
 import vcc.viv.ads.demo.databinding.FragmentRequestResultBinding;
 import vcc.viv.ads.demo.util.Const;
 import vcc.viv.ads.demo.util.Event;
@@ -65,9 +66,6 @@ public class RequestResultFragment extends BaseFragment implements Event {
         initView();
         initSetting();
         initRequestConfigure();
-
-        bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
-        binding.middleLayout.setVisibility(View.VISIBLE);
     }
 
     @Override
@@ -134,6 +132,7 @@ public class RequestResultFragment extends BaseFragment implements Event {
                 toolkit.logger.warning(String.format(Const.Error.empty, "data in adapter"));
             } else {
                 adapter.setData(data);
+                adapter.notifyDataSetChanged();
                 binding.refresh.setRefreshing(false);
             }
         });
@@ -144,17 +143,14 @@ public class RequestResultFragment extends BaseFragment implements Event {
             public void requestAdsSuccess(String id, String requestId, List<AdsManager.AdsInfo> data) {
                 super.requestAdsSuccess(id, requestId, data);
                 if (!tag.equals(id)) return;
-
-                getActivity().runOnUiThread(() -> {
-                    List<RequestResultAdapter.AdsInfo> adsInfo = new ArrayList<>();
-                    for (AdsManager.AdsInfo dataItem : data) {
-                        RequestResultAdapter.AdsInfo item = new RequestResultAdapter.AdsInfo(new ConstraintLayout(getContext()), dataItem.zoneId);
-                        AdsData info = toolkit.adsManager.addAds(item.view, tag, requestId, dataItem.zoneId);
-                        adsInfo.add(item);
-                        toolkit.logger.debug(toolkit.gson.toJson(info));
-                    }
-                    viewModel.setViewList(adsInfo);
-                });
+                List<RequestResultAdapter.AdsInfo> adsInfo = new ArrayList<>();
+                for (AdsManager.AdsInfo dataItem : data) {
+                    RequestResultAdapter.AdsInfo item = new RequestResultAdapter.AdsInfo(new ConstraintLayout(getContext()), dataItem.zoneId);
+                    AdsData info = toolkit.adsManager.addAds(item.view, tag, requestId, dataItem.zoneId);
+                    adsInfo.add(item);
+                    toolkit.logger.debug(toolkit.gson.toJson(info));
+                }
+                getActivity().runOnUiThread(() -> viewModel.setViewList(adsInfo));
             }
 
             @Override
@@ -164,6 +160,24 @@ public class RequestResultFragment extends BaseFragment implements Event {
                 toolkit.logger.warning(String.format(Const.Error.error, id + " - " + msg));
                 binding.refresh.setRefreshing(false);
                 Snackbar.make(binding.mainContent, getResources().getString(R.string.notice_zone_not_exist), BaseTransientBottomBar.LENGTH_SHORT).show();
+
+            }
+
+            @Override
+            public void loadAdsStart(String id, String requestId, String zoneId) {
+                super.loadAdsStart(id, requestId, zoneId);
+            }
+
+            @Override
+            public void loadAdsFinish(String id, String requestId, String zoneId) {
+                super.loadAdsFinish(id, requestId, zoneId);
+            }
+
+            @Override
+            public void closeWebViewAds(String id, String requestId, String zoneId) {
+                super.closeWebViewAds(id, requestId, zoneId);
+                if (!tag.equals(id)) return;
+                Snackbar.make(binding.mainContent, "closeWebViewAds", BaseTransientBottomBar.LENGTH_SHORT).show();
             }
         };
         toolkit.adsManager.callbackRegister(tag, callback);
@@ -172,6 +186,7 @@ public class RequestResultFragment extends BaseFragment implements Event {
     private void initRequestConfigure() {
         toolkit.logger.info("init bottom sheet behavior");
         bottomSheetBehavior = BottomSheetBehavior.from(binding.bottomSheet.bottomSheetLayout);
+        bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
         bottomSheetBehavior.addBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
             @Override
             public void onStateChanged(@NonNull View bottomSheet, int newState) {
@@ -267,6 +282,7 @@ public class RequestResultFragment extends BaseFragment implements Event {
             for (int i = 0; i < zonesAdapter.getData().size(); i++) {
                 zones.add(new Zone(zonesAdapter.getData().get(i), null));
             }
+
             toolkit.adsManager.request(tag, requestId, new AdsRequest.ReaderParameter(
                     Const.Ads.Test.userId,
                     zones,

@@ -6,7 +6,7 @@
     <string name="no">Không</string>
 
     <!-- Request Fragment -->
-    <string name="bottom_sheet_zone_input">Nhập id zone quảng cáo</string>
+    <string name="bottom_sheet_zone_input">sspId, sspId,...</string>
     <string name="bottom_sheet_request">Tạo quảng cáo</string>
 
     <!-- Demo Fragment -->

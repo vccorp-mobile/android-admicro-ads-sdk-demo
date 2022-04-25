@@ -7,7 +7,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import vcc.viv.ads.demo.base.BaseFragment;
 import vcc.viv.ads.demo.bin.main.demo.DemoFragment;
-import vcc.viv.ads.demo.bin.main.request.RequestFragment;
+import vcc.viv.ads.demo.bin.main.request.RequestResultFragment;
 
 public class MainAdapter extends FragmentStateAdapter {
     /*
@@ -31,7 +31,7 @@ public class MainAdapter extends FragmentStateAdapter {
         Type type = values[position % values.length];
         switch (type) {
             case Request:
-                return new RequestFragment();
+                return new RequestResultFragment();
             case Demo:
                 return new DemoFragment();
             default:

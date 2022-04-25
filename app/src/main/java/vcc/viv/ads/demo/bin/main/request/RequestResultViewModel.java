@@ -1,4 +1,4 @@
-package vcc.viv.ads.demo.bin.main.request.detail;
+package vcc.viv.ads.demo.bin.main.request;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

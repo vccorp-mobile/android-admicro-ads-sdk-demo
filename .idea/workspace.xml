@@ -13,22 +13,30 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d712880-0459-49ef-8b47-ec9e9bf57db5" name="Default Changelist" comment="update readme">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/vcc/viv/ads/demo/bin/demo/DetailAdsCatFishFragment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_detail_ads_catfish.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" afterDir="false" />
+    <list default="true" id="3d712880-0459-49ef-8b47-ec9e9bf57db5" name="Default Changelist" comment="update">
+      <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ReadMe.md" beforeDir="false" afterPath="$PROJECT_DIR$/ReadMe.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/vcc/viv/ads/demo/base/Toolkit.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/vcc/viv/ads/demo/base/Toolkit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/vcc/viv/ads/demo/bin/demo/DetailActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/vcc/viv/ads/demo/bin/demo/DetailActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/vcc/viv/ads/demo/bin/demo/DetailAdsPopupFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/vcc/viv/ads/demo/bin/demo/DetailAdsPopupFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/vcc/viv/ads/demo/bin/demo/DetailAdsTrueViewFragment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/vcc/viv/ads/demo/bin/demo/DetailAdsWebFragment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/vcc/viv/ads/demo/bin/main/demo/DemoViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/vcc/viv/ads/demo/bin/main/demo/DemoViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_detail_ads_popup.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_detail_ads_popup.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_detail_ads_true_view.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/vcc/viv/ads/demo/bin/MainActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/vcc/viv/ads/demo/bin/MainAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/vcc/viv/ads/demo/bin/main/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/vcc/viv/ads/demo/bin/main/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/vcc/viv/ads/demo/bin/main/MainAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/vcc/viv/ads/demo/bin/main/MainAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/vcc/viv/ads/demo/bin/main/request/RequestFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/vcc/viv/ads/demo/bin/main/request/RequestPagerAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/vcc/viv/ads/demo/bin/main/request/detail/RequestResultAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/vcc/viv/ads/demo/bin/main/request/RequestResultAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/vcc/viv/ads/demo/bin/main/request/detail/RequestResultFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/vcc/viv/ads/demo/bin/main/request/RequestResultFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/vcc/viv/ads/demo/bin/main/request/detail/RequestResultViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/vcc/viv/ads/demo/bin/main/request/RequestResultViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/vcc/viv/ads/demo/bin/main/request/log/RequestLogFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/vcc/viv/ads/demo/bin/request/RequestResultAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/vcc/viv/ads/demo/bin/request/RequestResultFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/vcc/viv/ads/demo/bin/request/RequestResultViewModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/vcc/viv/ads/demo/bin/request/TagAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_request.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_request_log.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -127,6 +135,7 @@
     <property name="SHOW_ALL_PROCESSES" value="false" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../AdsSdk" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunManager">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
@@ -236,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650857046000</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="update">
+      <created>1650874697868</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1650874697868</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -286,14 +302,15 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update demo follow ads sdk 1.1.0 dev" />
     <MESSAGE value="update readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="update readme" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/vcc/viv/ads/demo/bin/demo/DetailActivity.java</url>
-          <line>71</line>
+          <line>70</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
@@ -303,7 +320,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/vcc/viv/ads/demo/bin/demo/DetailActivity.java</url>
-          <line>94</line>
+          <line>91</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">

@@ -14,12 +14,11 @@ import java.util.List;
 
 import vcc.viv.ads.demo.R;
 import vcc.viv.ads.demo.base.BaseActivity;
-import vcc.viv.ads.demo.bin.main.request.RequestFragment;
 import vcc.viv.ads.demo.databinding.ActivityMainBinding;
 import vcc.viv.ads.demo.util.Const;
 import vcc.viv.ads.demo.util.Event;
 
-public class MainActivity extends BaseActivity implements RequestFragment.CallBack {
+public class MainActivity extends BaseActivity{
     /*
      * Area : Variable
      */
@@ -88,12 +87,6 @@ public class MainActivity extends BaseActivity implements RequestFragment.CallBa
         }
     }
 
-    @Override
-    public void onSwipePage() {
-        binding.viewpager.setUserInputEnabled(true);
-        binding.viewpager.setCurrentItem(MainAdapter.Type.Demo.ordinal());
-    }
-
     /*
      * Area : Function
      */
@@ -127,16 +120,6 @@ public class MainActivity extends BaseActivity implements RequestFragment.CallBa
         toolkit.logger.info("init page call back");
         pageChangeCallback = new ViewPager2.OnPageChangeCallback() {
             @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-                super.onPageScrolled(position, positionOffset, positionOffsetPixels);
-                if (position == 0 && positionOffsetPixels == 0) {
-                    binding.viewpager.setUserInputEnabled(false);
-                } else {
-                    binding.viewpager.setUserInputEnabled(true);
-                }
-            }
-
-            @Override
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
                 toolkit.logger.debug(String.format("position[%s]", position));
@@ -146,7 +129,7 @@ public class MainActivity extends BaseActivity implements RequestFragment.CallBa
 
         toolkit.logger.info("viewpager");
         binding.viewpager.setAdapter(pagerAdapter);
-        binding.viewpager.setUserInputEnabled(false);
+        binding.viewpager.setUserInputEnabled(true);
         binding.viewpager.registerOnPageChangeCallback(pageChangeCallback);
     }
 
