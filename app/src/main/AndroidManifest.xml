@@ -14,10 +14,7 @@
         android:theme="@style/Theme.AdsSdk">
         <!-- Core Activity -->
         <activity
-            android:name=".bin.demo.DetailActivity"
-            android:exported="true"></activity>
-        <activity
-            android:name=".bin.main.MainActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,14 +23,6 @@
         </activity>
 
         <!-- Test Activity -->
-        <activity
-            android:name=".test.request.AdsRequestActivity"
-            android:exported="true">
-
-        </activity>
-        <activity
-            android:name=".test.request.AdsTestRequestActivity"
-            android:exported="true"></activity>
     </application>
 
 </manifest>
