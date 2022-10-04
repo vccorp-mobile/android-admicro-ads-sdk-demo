@@ -35,10 +35,6 @@ public class MainActivity extends AppCompatActivity {
 
         List<String> item = new ArrayList<>();
         item.add("Popup");
-        item.add("Popup-Form");
-        item.add("Popup-TMDT");
-        item.add("Popup-Game");
-        item.add("Popup-LiveStream");
         item.add("Catfish");
         item.add("Inpage");
         item.add("NonInpage");
@@ -50,18 +46,6 @@ public class MainActivity extends AppCompatActivity {
             switch (item.get(i)) {
                 case "Popup":
                     addFragment(DetailAdsPopupFragment.newInstance());
-                    break;
-                case "Popup-Form":
-                    addFragment(DetailAdsPopupFragment.newInstance("form", "https://demo.admicro.vn/tuta/demo/ads-format-in-app-form/index.html"));
-                    break;
-                case "Popup-TMDT":
-                    addFragment(DetailAdsPopupFragment.newInstance("ecommerce", "https://shopee.vn/unilever_vietnam"));
-                    break;
-                case "Popup-Game":
-                    addFragment(DetailAdsPopupFragment.newInstance("game", "https://devminigame.ewings.vn/games/L002/?dev=1"));
-                    break;
-                case "Popup-LiveStream":
-                    addFragment(DetailAdsPopupFragment.newInstance("livestream", "https://demo.admicro.vn/mobile/billboard/ban_270921.html"));
                     break;
                 case "Catfish":
                     addFragment(DetailAdsCatFishFragment.newInstance());
