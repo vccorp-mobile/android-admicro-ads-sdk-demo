@@ -17,7 +17,9 @@ public class Toolkit {
 
     public void initAdsSdk(Activity activity) {
         InitializeParameter parameter = new InitializeParameter()
-                .setCore(activity, Const.appId, BuildConfig.LIBRARY_PACKAGE_NAME + "");
+                .setCore(activity, Const.appId, BuildConfig.LIBRARY_PACKAGE_NAME + "")
+                .setSessionId(null)
+                .setHost("https://ul.admicro.vn/pega/game/");
         adsManager = AdsManager.getInstance();
         adsManager.initialize(parameter);
     }
