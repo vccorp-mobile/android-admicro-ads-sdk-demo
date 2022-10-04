@@ -26,5 +26,5 @@ dependencies {
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
 
-    implementation 'vcc.viv.ads:vcc-sdk-ads:1.1.2'
+    implementation 'vcc.viv.ads:vcc-sdk-ads:1.1.1'
 }
