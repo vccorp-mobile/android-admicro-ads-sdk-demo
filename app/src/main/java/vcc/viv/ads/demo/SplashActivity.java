@@ -1,16 +1,12 @@
 package vcc.viv.ads.demo;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import vcc.viv.ads.bin.AdsData;
 import vcc.viv.ads.bin.AdsManager;
 import vcc.viv.ads.bin.AdsManagerCallback;
 import vcc.viv.ads.bin.AdsRequest;
@@ -18,10 +14,7 @@ import vcc.viv.ads.bin.AdsWelcome;
 import vcc.viv.ads.bin.Zone;
 import vcc.viv.ads.bin.adsenum.AdsForm;
 import vcc.viv.ads.demo.bin.BaseActivity;
-import vcc.viv.ads.demo.bin.Toolkit;
-import vcc.viv.ads.demo.databinding.ActivityMainBinding;
 import vcc.viv.ads.demo.databinding.ActivitySplashBinding;
-import vcc.viv.ads.demo.detail.DetailAdsPopupFragment;
 import vcc.viv.ads.demo.util.Const;
 
 public class SplashActivity extends BaseActivity {
@@ -42,7 +35,7 @@ public class SplashActivity extends BaseActivity {
         binding = ActivitySplashBinding.inflate(inflater);
         setContentView(binding.getRoot());
 
-        AdsWelcome adsWelcome = new AdsWelcome(R.drawable.dummy_gif,R.drawable.dummy_gif_cat2, 5000);
+        AdsWelcome adsWelcome = new AdsWelcome(R.drawable.dummy_gif, R.drawable.dummy_gif_cat2, 5000);
         toolkit.adsManager.setWelcomeAds(adsWelcome);
 
         AdsManagerCallback callback = new AdsManagerCallback() {
@@ -64,7 +57,7 @@ public class SplashActivity extends BaseActivity {
             public void requestAdsSuccess(String id, String requestId, List<AdsManager.AdsInfo> adsInfo) {
                 super.requestAdsSuccess(id, requestId, adsInfo);
                 if (!tag.equals(id)) return;
-                 toolkit.adsManager.addAds(AdsForm.welcome, binding.root, tag, requestId, adsInfo.get(0).zoneId,null,null);
+                toolkit.adsManager.addAds(AdsForm.welcome, binding.root, tag, requestId, adsInfo.get(0).zoneId, null, null);
             }
 
             @Override
@@ -77,7 +70,7 @@ public class SplashActivity extends BaseActivity {
             public void closeWebViewAdsSuccess(String s, String s1, String s2) {
                 super.closeWebViewAdsSuccess(s, s1, s2);
                 finish();
-               MainActivity.start(context);
+                MainActivity.start(context);
             }
         };
         toolkit.adsManager.callbackRegister(tag, callback);
