@@ -16,7 +16,6 @@ import vcc.viv.ads.demo.bin.Toolkit;
 import vcc.viv.ads.demo.databinding.ActivityMainBinding;
 import vcc.viv.ads.demo.detail.DetailAdsCatFishFragment;
 import vcc.viv.ads.demo.detail.DetailAdsInPageFragment;
-import vcc.viv.ads.demo.detail.DetailAdsNativeFragment;
 import vcc.viv.ads.demo.detail.DetailAdsNonInPage;
 import vcc.viv.ads.demo.detail.DetailAdsPopupFragment;
 
@@ -43,8 +42,6 @@ public class MainActivity extends AppCompatActivity {
         item.add("Catfish");
         item.add("Inpage");
         item.add("NonInpage");
-        item.add("Native-Home");
-        item.add("Native-Detail");
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, item);
 
@@ -68,12 +65,6 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case "Catfish":
                     addFragment(DetailAdsCatFishFragment.newInstance());
-                    break;
-                case "Native-Home":
-                    addFragment(DetailAdsNativeFragment.newInstance(1));
-                    break;
-                case "Native-Detail":
-                    addFragment(DetailAdsNativeFragment.newInstance(0));
                     break;
                 case "Inpage":
                     addFragment(DetailAdsInPageFragment.newInstance());
