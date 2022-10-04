@@ -48,17 +48,12 @@ public class DetailAdsPopupFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        Bundle args = getArguments();
-        if (args == null) return;
-        String type = args.getString("type", "");
-        String link = args.getString("link", "");
-
         AdsManagerCallback callback = new AdsManagerCallback() {
             @Override
             public void requestAdsSuccess(String id, String requestId, List<AdsManager.AdsInfo> adsInfo) {
                 super.requestAdsSuccess(id, requestId, adsInfo);
                 if (!tag.equals(id)) return;
-                AdsData info = toolkit.adsManager.addAds(AdsForm.popup, binding.root, tag, requestId, adsInfo.get(0).zoneId, type, link);
+                toolkit.adsManager.addAds(AdsForm.popup, binding.root, tag, requestId, adsInfo.get(0).zoneId);
             }
 
             @Override
@@ -66,22 +61,6 @@ public class DetailAdsPopupFragment extends Fragment {
                 super.requestAdsFail(id, requestId, msg);
                 if (!tag.equals(id)) return;
             }
-
-            @Override
-            public void closeWebViewAdsSuccess(String id, String requestId, String msg) {
-                super.closeWebViewAdsSuccess(id, requestId, msg);
-            }
-
-            @Override
-            public void loadAdsFinish(String id, String requestId, String zoneId) {
-                super.loadAdsFinish(id, requestId, zoneId);
-            }
-
-            @Override
-            public void openWebAds(String id, String requestId, String zoneId, String url,String type) {
-                super.openWebAds(id, requestId, zoneId, url,type);
-            }
-
         };
         toolkit.adsManager.callbackRegister(tag, callback);
         toolkit.adsManager.request(tag, requestId, new AdsRequest.ReaderParameter(

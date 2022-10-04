@@ -78,21 +78,6 @@ public class DetailAdsInPageFragment extends Fragment {
                 super.requestAdsFail(id, requestId, msg);
                 if (!tag.equals(id)) return;
             }
-
-            @Override
-            public void closeWebViewAdsSuccess(String id, String requestId, String msg) {
-                super.closeWebViewAdsSuccess(id, requestId, msg);
-            }
-
-            @Override
-            public void loadAdsFinish(String id, String requestId, String zoneId) {
-                super.loadAdsFinish(id, requestId, zoneId);
-            }
-
-            @Override
-            public void openWebAds(String id, String requestId, String zoneId, String url,String type) {
-                super.openWebAds(id, requestId, zoneId, url,type);
-            }
         };
         toolkit.adsManager.callbackRegister(tag, callback);
 

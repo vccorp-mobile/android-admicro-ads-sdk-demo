@@ -78,12 +78,6 @@ public class DetailAdsCatFishFragment extends Fragment {
             }
 
             @Override
-            public void openWebAds(String id, String requestId, String zoneId, String url, String type) {
-                super.openWebAds(id, requestId, zoneId, url, type);
-                if (!tag.equals(id)) return;
-            }
-
-            @Override
             public void showExpandAds(String id, String requestId, String zoneId) {
                 super.showExpandAds(id, requestId, zoneId);
             }
