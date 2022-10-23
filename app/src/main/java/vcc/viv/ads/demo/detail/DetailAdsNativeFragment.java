@@ -1,5 +1,7 @@
 package vcc.viv.ads.demo.detail;
 
+import android.content.Context;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,7 +15,7 @@ import java.util.List;
 import vcc.viv.ads.bin.AdsManager;
 import vcc.viv.ads.bin.AdsManagerCallback;
 import vcc.viv.ads.bin.AdsRequest;
-import vcc.viv.ads.bin.Zone;
+import vcc.viv.ads.demo.R;
 import vcc.viv.ads.demo.bin.Toolkit;
 import vcc.viv.ads.demo.databinding.FragmentDetailAdsItemBinding;
 import vcc.viv.ads.demo.util.Const;
@@ -35,6 +37,7 @@ public class DetailAdsNativeFragment extends Fragment {
     public static DetailAdsNativeFragment newInstance(int type) {
         Bundle args = new Bundle();
         args.putInt(parameterData, type);
+
         DetailAdsNativeFragment myFragment = new DetailAdsNativeFragment();
         myFragment.setArguments(args);
         return myFragment;
@@ -56,6 +59,9 @@ public class DetailAdsNativeFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        Context context = getContext();
+        Resources resources = context.getResources();
+
         AdsManagerCallback callback = new AdsManagerCallback() {
             @Override
             public void requestAdsSuccess(String id, String requestId, List<AdsManager.AdsInfo> adsInfo) {
@@ -76,26 +82,27 @@ public class DetailAdsNativeFragment extends Fragment {
         if (getArguments() != null) {
             type = getArguments().getInt(parameterData);
         } else {
-            type = 1;
+            type = R.string.native_home;
         }
         AdsRequest.ReaderParameter parameter = new AdsRequest.ReaderParameter(
                 Const.Ads.Test.userId,
-                new ArrayList<Zone>() {{
+                new ArrayList<String>() {{
                 }},
                 Const.Ads.Test.positions, Const.Ads.Test.url, Const.Ads.Test.channel
         );
         switch (type) {
-            case 1:
-                parameter.zones.add(new Zone(homeZoneId, Zone.AdsType.noninpage));
+            case R.string.native_home:
+                parameter.zones.add(homeZoneId);
                 toolkit.adsManager.request(tag, requestId, parameter);
-                parameter.isTestNative = AdsRequest.NativeTest.home;
+                parameter.isTestNative = AdsRequest.NativeTest.HOME;
                 break;
-            case 0:
-                parameter.zones.add(new Zone(detailZoneId, Zone.AdsType.noninpage));
+            case R.string.native_detail:
+                parameter.zones.add(detailZoneId);
                 toolkit.adsManager.request(tag, requestId, parameter);
-                parameter.isTestNative = AdsRequest.NativeTest.detail;
+                parameter.isTestNative = AdsRequest.NativeTest.DETAIL;
                 break;
             default:
+                String msg = String.format("data.tag id[%s] - string[%s]", type, resources.getString(type));
                 break;
         }
     }
@@ -105,12 +112,4 @@ public class DetailAdsNativeFragment extends Fragment {
         super.onDestroy();
         toolkit.adsManager.callbackUnregister(tag);
     }
-
-    /*
-     * Area : Function
-     */
-
-    /*
-     * Area : Inner Class
-     */
 }

@@ -1,6 +1,5 @@
 package vcc.viv.ads.demo.detail;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,11 +11,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import vcc.viv.ads.bin.AdsData;
+import vcc.viv.ads.bin.AdsForm;
 import vcc.viv.ads.bin.AdsManager;
 import vcc.viv.ads.bin.AdsManagerCallback;
 import vcc.viv.ads.bin.AdsRequest;
-import vcc.viv.ads.bin.Zone;
-import vcc.viv.ads.bin.adsenum.AdsForm;
 import vcc.viv.ads.demo.bin.Toolkit;
 import vcc.viv.ads.demo.databinding.FragmentDetailAdsPopupBinding;
 import vcc.viv.ads.demo.util.Const;
@@ -26,19 +24,10 @@ public class DetailAdsPopupFragment extends Fragment {
 
     private Toolkit toolkit = new Toolkit();
 
-    private final String zoneId = "2026668";
+    private final String zoneId = "2013985";
     private final String requestId = "1";
 
     private FragmentDetailAdsPopupBinding binding;
-
-    public static DetailAdsPopupFragment newInstance(String type, String link) {
-        Bundle args = new Bundle();
-        DetailAdsPopupFragment myFragment = new DetailAdsPopupFragment();
-        args.putString("type", type);
-        args.putString("link", link);
-        myFragment.setArguments(args);
-        return myFragment;
-    }
 
     public static DetailAdsPopupFragment newInstance() {
         Bundle args = new Bundle();
@@ -58,17 +47,12 @@ public class DetailAdsPopupFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        Bundle args = getArguments();
-        if (args == null) return;
-        String type = args.getString("type", "");
-        String link = args.getString("link", "");
-
         AdsManagerCallback callback = new AdsManagerCallback() {
             @Override
             public void requestAdsSuccess(String id, String requestId, List<AdsManager.AdsInfo> adsInfo) {
                 super.requestAdsSuccess(id, requestId, adsInfo);
                 if (!tag.equals(id)) return;
-                AdsData info = toolkit.adsManager.addAds(AdsForm.popup, binding.root, tag, requestId, adsInfo.get(0).zoneId,type,link);
+                toolkit.adsManager.addAds(AdsForm.popup, binding.root, tag, requestId, adsInfo.get(0).zoneId);
             }
 
             @Override
@@ -80,8 +64,8 @@ public class DetailAdsPopupFragment extends Fragment {
         toolkit.adsManager.callbackRegister(tag, callback);
         toolkit.adsManager.request(tag, requestId, new AdsRequest.ReaderParameter(
                 Const.Ads.Test.userId,
-                new ArrayList<Zone>() {{
-                    add(new Zone(zoneId, Zone.AdsType.popup));
+                new ArrayList<String>() {{
+                    add(zoneId);
                 }},
                 Const.Ads.Test.positions, Const.Ads.Test.url, Const.Ads.Test.channel
         ));

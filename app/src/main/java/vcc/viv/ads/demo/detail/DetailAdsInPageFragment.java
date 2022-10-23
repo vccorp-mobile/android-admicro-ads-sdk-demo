@@ -13,12 +13,11 @@ import com.google.android.material.snackbar.Snackbar;
 import java.util.ArrayList;
 import java.util.List;
 
+import vcc.viv.ads.bin.AdsForm;
 import vcc.viv.ads.bin.AdsManager;
 import vcc.viv.ads.bin.AdsManagerCallback;
 import vcc.viv.ads.bin.AdsRequest;
-import vcc.viv.ads.bin.Zone;
-import vcc.viv.ads.bin.adsenum.AdsForm;
-import vcc.viv.ads.bin.adsenum.WebViewType;
+import vcc.viv.ads.bin.WebViewType;
 import vcc.viv.ads.demo.bin.Toolkit;
 import vcc.viv.ads.demo.databinding.FragmentDetailAdsInpageBinding;
 import vcc.viv.ads.demo.util.Const;
@@ -83,8 +82,8 @@ public class DetailAdsInPageFragment extends Fragment {
 
         toolkit.adsManager.request(tag, requestId, new AdsRequest.ReaderParameter(
                 Const.Ads.Test.userId,
-                new ArrayList<Zone>() {{
-                    add(new Zone(zoneId, Zone.AdsType.popup));
+                new ArrayList<String>() {{
+                    add(zoneId);
                 }},
                 Const.Ads.Test.positions, Const.Ads.Test.url, Const.Ads.Test.channel
         ));

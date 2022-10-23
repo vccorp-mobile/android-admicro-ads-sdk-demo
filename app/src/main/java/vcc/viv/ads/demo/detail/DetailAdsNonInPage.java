@@ -10,11 +10,10 @@ import androidx.fragment.app.Fragment;
 import java.util.ArrayList;
 import java.util.List;
 
+import vcc.viv.ads.bin.AdsForm;
 import vcc.viv.ads.bin.AdsManager;
 import vcc.viv.ads.bin.AdsManagerCallback;
 import vcc.viv.ads.bin.AdsRequest;
-import vcc.viv.ads.bin.Zone;
-import vcc.viv.ads.bin.adsenum.AdsForm;
 import vcc.viv.ads.demo.bin.Toolkit;
 import vcc.viv.ads.demo.databinding.FragmentDetailNonInpageBinding;
 import vcc.viv.ads.demo.util.Const;
@@ -23,7 +22,7 @@ public class DetailAdsNonInPage extends Fragment {
     private static final String tag = DetailAdsPopupFragment.class.getSimpleName();
 
     private Toolkit toolkit = new Toolkit();
-    private final String zoneId = "2026668";
+    private final String zoneId = "2013985";
     private final String requestId = "1";
 
     private FragmentDetailNonInpageBinding binding;
@@ -66,8 +65,8 @@ public class DetailAdsNonInPage extends Fragment {
         toolkit.adsManager.callbackRegister(tag, callback);
         toolkit.adsManager.request(tag, requestId, new AdsRequest.ReaderParameter(
                 Const.Ads.Test.userId,
-                new ArrayList<Zone>() {{
-                    add(new Zone(zoneId, Zone.AdsType.noninpage));
+                new ArrayList<String>() {{
+                    add(zoneId);
                 }},
                 Const.Ads.Test.positions, Const.Ads.Test.url, Const.Ads.Test.channel
         ));
