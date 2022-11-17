@@ -23,9 +23,9 @@ import vcc.viv.ads.demo.util.Const;
 public class DetailAdsPopupFragment extends Fragment {
     private static final String tag = DetailAdsPopupFragment.class.getSimpleName();
 
-    private Toolkit toolkit = new Toolkit();
+    private Toolkit toolkit = Toolkit.newInstance();
 
-    private final String zoneId = "2026668";
+    private final String zoneId = "2026130";
     private final String requestId = "1";
 
     private FragmentDetailAdsPopupBinding binding;

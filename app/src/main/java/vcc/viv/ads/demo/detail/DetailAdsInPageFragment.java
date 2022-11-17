@@ -27,7 +27,7 @@ public class DetailAdsInPageFragment extends Fragment {
     private static final String tag = DetailAdsInPageFragment.class.getSimpleName();
     private static final String parameterData = tag + ":parameter:data";
 
-    private Toolkit toolkit = new Toolkit();
+    private Toolkit toolkit = Toolkit.newInstance();
     private final String zoneId = "2013893";
     private final String requestId = "1";
 

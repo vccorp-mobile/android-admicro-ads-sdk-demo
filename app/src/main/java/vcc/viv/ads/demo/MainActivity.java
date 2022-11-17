@@ -1,5 +1,9 @@
 package vcc.viv.ads.demo;
 
+import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
+
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.widget.ArrayAdapter;
@@ -21,13 +25,18 @@ import vcc.viv.ads.demo.detail.DetailAdsNonInPage;
 import vcc.viv.ads.demo.detail.DetailAdsPopupFragment;
 
 public class MainActivity extends AppCompatActivity {
+    private ActivityMainBinding binding;
 
-    ActivityMainBinding binding;
+    public static void start(Context context) {
+        Intent starter = new Intent(context, MainActivity.class);
+        starter.setFlags(FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(starter);
+    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Toolkit toolkit = new Toolkit();
+        Toolkit toolkit = Toolkit.newInstance();
         toolkit.initAdsSdk(this);
 
         LayoutInflater inflater = LayoutInflater.from(this);

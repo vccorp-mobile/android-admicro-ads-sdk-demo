@@ -31,7 +31,7 @@ public class DetailAdsNativeFragment extends Fragment {
     private final String homeZoneId = "2016084";
     private final String detailZoneId = "2016084";
     private final String requestId = "1";
-    private Toolkit toolkit = new Toolkit();
+    private Toolkit toolkit = Toolkit.newInstance();
 
     private FragmentDetailAdsItemBinding binding;
 

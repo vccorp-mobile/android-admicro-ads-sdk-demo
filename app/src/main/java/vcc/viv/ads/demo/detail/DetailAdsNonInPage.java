@@ -22,7 +22,7 @@ import vcc.viv.ads.demo.util.Const;
 public class DetailAdsNonInPage extends Fragment {
     private static final String tag = DetailAdsPopupFragment.class.getSimpleName();
 
-    private Toolkit toolkit = new Toolkit();
+    private Toolkit toolkit = Toolkit.newInstance();
     private final String zoneId = "2026668";
     private final String requestId = "1";
 

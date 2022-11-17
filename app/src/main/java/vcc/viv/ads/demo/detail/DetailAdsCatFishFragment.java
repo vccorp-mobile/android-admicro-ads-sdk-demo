@@ -27,7 +27,7 @@ public class DetailAdsCatFishFragment extends Fragment {
 
     private final String zoneId = "2019569";
     private final String requestId = "1";
-    private Toolkit toolkit = new Toolkit();
+    private Toolkit toolkit = Toolkit.newInstance();
     private int durationAnimation;
     private String data;
 
